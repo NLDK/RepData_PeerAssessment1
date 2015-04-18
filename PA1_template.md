@@ -1,8 +1,9 @@
 # Reproducible Research: Peer Assessment 1
 
+For this excerise we will be examining activity patterns of individuals throughout the week, based on week and time. The data was gathered from the various fitness trackers (fitbit, jawbone, nike fuelband).
 
 ## Loading and preprocessing the data
-First set the working directory to the location of the file and load it in using the read.csv function
+First set the working directory to the location of the data file and load it in using the read.csv function
 
 ```r
 setwd("/Users/dankirlin/RepData_PeerAssessment1")
@@ -11,7 +12,7 @@ file <- read.csv("activity.csv")
 
 
 ## What is mean total number of steps taken per day?
-Remove the rows with NA data values, then group the data by date, summing up the stpes.
+Clean the data by removing the rows with NA data values, then group the data by date, summing up the steps.
 Create a histogram of the steps taken per day
 
 ```r
@@ -23,7 +24,7 @@ hist(stepsPerDayDf$steps, main = "Steps per day", xlab = "steps")
 ![](PA1_template_files/figure-html/unnamed-chunk-2-1.png) 
 
 
-Report the mean and median of steps taken
+What're the average and median steps taken?
 
 ```r
 mean(stepsPerDayDf$steps)
@@ -47,7 +48,7 @@ Line plot of the average steps in each interval over all days using the plot fun
 
 ```r
 meanStepsPer5minForDayDf <- aggregate(steps ~ interval , fileCleaned, mean)
-plot(meanStepsPer5minForDayDf$interval, meanStepsPer5minForDayDf$steps, type = "l")
+plot(meanStepsPer5minForDayDf$interval, meanStepsPer5minForDayDf$steps, type = "l", xlab ="Interval", ylab = "Steps", main = "Average Steps Per Interval Across All Days")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 

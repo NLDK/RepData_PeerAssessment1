@@ -36,7 +36,7 @@ median(stepsPerDayDf$steps)
 Line plot of the average steps in each interval over all days using the plot function and aggregate to group the data
 ```{r}
 meanStepsPer5minForDayDf <- aggregate(steps ~ interval , fileCleaned, mean)
-plot(meanStepsPer5minForDayDf$interval, meanStepsPer5minForDayDf$steps, type = "l")
+plot(meanStepsPer5minForDayDf$interval, meanStepsPer5minForDayDf$steps, type = "l", xlab ="Interval", ylab = "Steps", main = "Average Steps Per Interval Across All Days")
 ```
 
 Which 5 minute interval contains the maximum number of steps? 
